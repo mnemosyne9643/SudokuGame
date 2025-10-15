@@ -63,8 +63,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Compile Update="Pages\EasyPart.xaml.cs">
-	    <DependentUpon>EasyPart.xaml</DependentUpon>
+	  <Compile Update="Pages\GamePlay.xaml.cs">
+	    <DependentUpon>GamePlay.xaml</DependentUpon>
 	  </Compile>
 	  <Compile Update="Pages\Tips.xaml.cs">
 	    <DependentUpon>Tips.xaml</DependentUpon>
@@ -72,10 +72,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="Pages\EasyPart.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Pages\MediumPart.xaml">
+	  <MauiXaml Update="Pages\GamePlay.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\StartGame.xaml">

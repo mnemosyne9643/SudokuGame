@@ -35,14 +35,16 @@ public partial class StartGame : ContentPage
         switch (selectedDifficulty)
         {
             case "EASY":
-                await Navigation.PushAsync(new EasyPart());
+                await Navigation.PushAsync(new GamePlay());
                 break;
             case "MEDIUM":
-                await Navigation.PushAsync(new MediumPart());
+                await Navigation.PushAsync(new GamePlay());
                 break;
             case "HARD":
-                await Navigation.PushAsync(new HardPart());
+                await Navigation.PushAsync(new GamePlay());
                 break;
+
+
 
         }
     }

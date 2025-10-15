@@ -1,23 +1,95 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="SudokuGame.Pages.EasyPart"
+             x:Class="SudokuGame.Pages.GamePlay"
              BackgroundColor="#90caf9">
 
     <VerticalStackLayout Padding="20" Spacing="25">
 
-        <HorizontalStackLayout HorizontalOptions="Center" Spacing="40">
-            <Label Text="CURRENT STREAK: 0"
-                   FontSize="16"
+        <Grid ColumnDefinitions="Auto, 40, Auto"
+              HorizontalOptions="Center"
+              VerticalOptions="Start"
+              Margin="0,10,0,0"
+              RowSpacing="0">       
+
+            <!-- CURRENT STREAK BOX -->
+            <Frame
+                Grid.Column="0"
+                BackgroundColor="#0d47a1"
+                CornerRadius="15"
+                HasShadow="True"
+                WidthRequest="150"
+                HeightRequest="70"
+                Padding="0"
+                BorderColor="#0D2C64"
+                HorizontalOptions="Center"
+                VerticalOptions="Center">
+
+                <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                    <Label Text="CURRENT STREAK"
+                   FontSize="12"
                    FontFamily="Poppins"
-                   TextColor="Black"
-                   FontAttributes="Bold" />
-            <Label Text="ALL TIME: 0"
-                   FontSize="16"
+                   FontAttributes="Bold"
+                   TextColor="#ffeb3b"
+                   HorizontalOptions="Center" />
+                    <Label Text="0"
+                   FontSize="22"
                    FontFamily="Poppins"
-                   TextColor="Black"
-                   FontAttributes="Bold" />
-        </HorizontalStackLayout>
+                   FontAttributes="Bold"
+                   TextColor="#ffeb3b"
+                   HorizontalOptions="Center" />
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- ALL TIME BOX WITH CROWN -->
+            <Grid Grid.Column="2"
+          HorizontalOptions="Center"
+          VerticalOptions="Center">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <!-- Crown Icon -->
+                <Image Source="crown_icon.png"
+               Grid.Row="0"
+               HorizontalOptions="Center"
+               Margin="0,0,0,-10"
+               HeightRequest="22"
+               WidthRequest="22"/>
+
+                <!-- All Time Box -->
+                <Frame
+            Grid.Row="1"
+            BackgroundColor="#0d47a1"
+            CornerRadius="15"
+            HasShadow="True"
+            WidthRequest="150"
+            HeightRequest="70"
+            Padding="0"
+            BorderColor="#0D2C64"
+            HorizontalOptions="Center"
+            VerticalOptions="Center">
+
+                    <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                        <Label Text="ALL TIME"
+                       FontSize="12"
+                       FontFamily="Poppins"
+                       FontAttributes="Bold"
+                       TextColor="#ffeb3b"
+                       HorizontalOptions="Center" />
+                        <Label Text="0"
+                       FontSize="22"
+                       FontFamily="Poppins"
+                       FontAttributes="Bold"
+                       TextColor="#ffeb3b"
+                       HorizontalOptions="Center" />
+                    </VerticalStackLayout>
+                </Frame>
+            </Grid>
+        </Grid>
+
 
         <FlexLayout FlowDirection="LeftToRight" JustifyContent="SpaceEvenly" AlignContent="Center" AlignItems="Center">
             <Label Text="Mistakes: 0/3" FontSize="15" FontFamily="Poppins"  TextColor="Black"/>
@@ -168,7 +240,7 @@
 
         <HorizontalStackLayout HorizontalOptions="Center" Spacing="15" Padding="10">
             <Button Text="Undo" WidthRequest="90" HeightRequest="45"
-                    BackgroundColor="#2196f3" TextColor="White" CornerRadius="15"
+                    BackgroundColor="#0d47a1" TextColor="White" CornerRadius="15"
                     FontAttributes="Bold">
                 <Button.Shadow>
                     <Shadow Brush="#000000" Opacity="0.4" Radius="8" Offset="4,4"/>
@@ -176,7 +248,7 @@
             </Button>
 
             <Button Text="Erase" WidthRequest="90" HeightRequest="45"
-                    BackgroundColor="#2196f3" TextColor="White" CornerRadius="15"
+                    BackgroundColor="#0d47a1" TextColor="White" CornerRadius="15"
                     FontAttributes="Bold">
                 <Button.Shadow>
                     <Shadow Brush="#000000" Opacity="0.4" Radius="8" Offset="4,4"/>
@@ -184,7 +256,7 @@
             </Button>
 
             <Button Text="Notes" WidthRequest="90" HeightRequest="45"
-                    BackgroundColor="#2196f3" TextColor="White" CornerRadius="15"
+                    BackgroundColor="#0d47a1" TextColor="White" CornerRadius="15"
                     FontAttributes="Bold">
                 <Button.Shadow>
                     <Shadow Brush="#000000" Opacity="0.4" Radius="8" Offset="4,4"/>
@@ -192,7 +264,7 @@
             </Button>
 
             <Button Text="Hint" WidthRequest="90" HeightRequest="45"
-                    BackgroundColor="#2196f3" TextColor="White" CornerRadius="15"
+                    BackgroundColor="#0d47a1" TextColor="White" CornerRadius="15"
                     FontAttributes="Bold">
                 <Button.Shadow>
                     <Shadow Brush="#000000" Opacity="0.4" Radius="8" Offset="4,4"/>
