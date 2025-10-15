@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SudokuGame.Pages.StartGame"
+             Title="Start Game"
+             BackgroundColor="#0A0A0A">
+
+
+    <ScrollView>
+        <VerticalStackLayout
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            Spacing="25">
+
+            <Label 
+                Text="SUDOKU"
+                HorizontalOptions="Center"
+                FontAttributes="Bold"
+                FontSize="36"
+                TextColor="White"
+                Margin="0,40,0,10"/>
+
+            <Frame 
+                BackgroundColor="Transparent"
+                HasShadow="True"
+                CornerRadius="75"
+                Padding="0"
+                HorizontalOptions="Center">
+                <Frame.Shadow>
+                    <Shadow Brush="Black" Opacity="0.4" Radius="10" Offset="5,5"/>
+                </Frame.Shadow>
+                <Image 
+                    x:Name="DifficultyImage"
+                    HeightRequest="150"
+                    WidthRequest="150"
+                    Aspect="AspectFill"/>
+            </Frame>
+
+            <Label 
+                x:Name="DifficultyLabel"
+                Text="EASY"
+                TextColor="White"
+                FontSize="24"
+                HorizontalOptions="Center"
+                FontAttributes="Bold"/>
+
+            <Frame
+                CornerRadius="20"
+                BackgroundColor="#222"
+                Padding="10"
+                HasShadow="True"
+                HorizontalOptions="Center">
+                <Frame.Shadow>
+                    <Shadow Brush="Black" Opacity="0.5" Radius="12" Offset="5,5"/>
+                </Frame.Shadow>
+                <Slider 
+                    x:Name="DifficultySlider"
+                    Minimum="0"
+                    Maximum="2"
+                    Value="0"
+                    WidthRequest="200"
+                    ValueChanged="OnDifficultyChanged"/>
+            </Frame>
+
+            <Label 
+                Text="Drag to adjust difficulty"
+                TextColor="#AAAAAA"
+                FontSize="14"
+                HorizontalOptions="Center"/>
+
+            <Button 
+                Text="START GAME"
+                BackgroundColor="#0078FF"
+                TextColor="White"
+                FontSize="18"
+                CornerRadius="15"
+                Padding="20,10"
+                HorizontalOptions="Center"
+                Clicked="OnStartButtonClicked">
+                <Button.Shadow>
+                    <Shadow Brush="Black" Opacity="0.4" Radius="10" Offset="5,5"/>
+                </Button.Shadow>
+            </Button>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

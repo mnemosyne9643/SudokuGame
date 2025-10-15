@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SudokuGame.MainPage"
+             BackgroundColor="#0A0A0F">
+    
+    <Grid RowDefinitions="200, *">
+
+
+        <Grid Grid.Row="0">
+            <Label Text="SUDOKU"
+               FontSize="36"
+               FontAttributes="Bold"
+               TextColor="White"
+               HorizontalOptions="Center"
+               VerticalOptions="Center" />
+        </Grid>
+
+        <ScrollView Grid.Row="1" Padding="30">
+            <StackLayout Spacing="25" VerticalOptions="CenterAndExpand">
+
+                <Button Text="START GAME"
+                    Clicked="StartGameButton_Clicked"
+                    BackgroundColor="#0078FF"
+                    TextColor="White"
+                    FontSize="20"
+                    CornerRadius="15"
+                    HeightRequest="60"/>
+
+                <Button Text="TIPS"
+                    Clicked="TipsButton_Clicked"
+                    BackgroundColor="#1E90FF"
+                    TextColor="White"
+                    FontSize="20"
+                    CornerRadius="15"
+                    HeightRequest="60"/>
+
+                <Button Text="OPTIONS"
+                    BackgroundColor="#00BFFF"
+                    TextColor="White"
+                    FontSize="20"
+                    CornerRadius="15"
+                    HeightRequest="60"/>
+
+                <Button Text="EXIT GAME"
+                    BackgroundColor="#333C4A"
+                    TextColor="White"
+                    FontSize="20"
+                    CornerRadius="15"
+                    HeightRequest="60"/>
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+
+</ContentPage>

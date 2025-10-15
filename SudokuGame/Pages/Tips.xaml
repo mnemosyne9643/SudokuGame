@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SudokuGame.Pages.Tips"
+             Title="Tips"
+             BackgroundColor="White">
+
+
+    <Grid Padding="20" RowDefinitions="*, Auto, Auto">
+        <!-- Main Tutorial Slider -->
+        <CarouselView x:Name="TipsCarousel"
+                      IndicatorView="TipsIndicators"
+                      Loop="False">
+            <CarouselView.ItemTemplate>
+                <DataTemplate>
+                    <VerticalStackLayout Spacing="15" Padding="10">
+                        <!-- Title -->
+                        <Label Text="HOW TO PLAY"
+                               FontSize="28"
+                               FontAttributes="Bold"
+                               HorizontalOptions="Center"
+                               TextColor="White"/>
+
+                        <!-- Tutorial Image -->
+                        <Frame BackgroundColor="#1C1C23"
+                               CornerRadius="20"
+                               Padding="20">
+                            <VerticalStackLayout Spacing="15">
+                                <Label Text="♥ ♥ ♥"
+                                       FontSize="24"
+                                       TextColor="White"
+                                       HorizontalOptions="Center"/>
+                                <Image Source="{Binding Image}"
+                                       Aspect="AspectFit"
+                                       HeightRequest="200"
+                                       HorizontalOptions="Center"/>
+                                <Label Text="{Binding Description}"
+                                       FontSize="18"
+                                       TextColor="White"
+                                       HorizontalTextAlignment="Center"/>
+                            </VerticalStackLayout>
+                        </Frame>
+                    </VerticalStackLayout>
+                </DataTemplate>
+            </CarouselView.ItemTemplate>
+        </CarouselView>
+
+        <!-- Navigation Buttons -->
+        <Grid Grid.Row="1" ColumnDefinitions="Auto, *, Auto" Margin="0,15,0,0">
+            <Button Text="←"
+                    Clicked="PrevButton_Clicked"
+                    WidthRequest="60"
+                    BackgroundColor="#9C27B0"
+                    TextColor="White"
+                    CornerRadius="15"/>
+            <IndicatorView x:Name="TipsIndicators"
+                           Grid.Column="1"
+                           HorizontalOptions="Center"
+                           IndicatorColor="#555"
+                           SelectedIndicatorColor="#FFB74D"
+                           Margin="0,5"/>
+            <Button Text="→"
+                    Grid.Column="2"
+                    Clicked="NextButton_Clicked"
+                    WidthRequest="60"
+                    BackgroundColor="#9C27B0"
+                    TextColor="White"
+                    CornerRadius="15"/>
+        </Grid>
+
+        <!-- OK Button (more space) -->
+        <Button Text="OK"
+                Grid.Row="2"
+                BackgroundColor="#9C27B0"
+                TextColor="White"
+                CornerRadius="15"
+                HeightRequest="50"
+                Clicked="OkButton_Clicked"
+                HorizontalOptions="Center"
+                VerticalOptions="End"
+                Margin="0,30,0,0"/>
+    </Grid>
+</ContentPage>
