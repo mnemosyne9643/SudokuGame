@@ -3,38 +3,20 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SudokuGame.MainPage"
              BackgroundColor="black">
-    
-    <Grid RowDefinitions="200, *">
 
-
-        <Grid Grid.Row="0">
-            <Label Text="SUDOKU"
-               FontSize="36"
-               FontAttributes="Bold"
-               TextColor="White"
-               HorizontalOptions="Center"
-               VerticalOptions="Center" />
-        </Grid>
+    <VerticalStackLayout Spacing="50">
         <Frame 
                 BackgroundColor="Transparent"
                 HasShadow="True"
-                Padding="25"
-                HeightRequest="200"            
-                HorizontalOptions="Center">
-            <Frame.Shadow>
-                <Shadow Brush="black" Opacity="0.4" Radius="10" Offset="5,5"/>
-            </Frame.Shadow>
-
-            <!-- Replace with your actual image filename -->
+                Padding="0"
+                Margin="0, 50, 0, 0"
+                WidthRequest="470"> 
             <Image 
-                    Source="sudoku_bg.png"  
-                    HeightRequest="200"
-                    WidthRequest="400"
-                    Aspect="AspectFill"
-                    HorizontalOptions="Center"/>
+                    Source="sudoku_bg.png"
+                    Aspect="Fill"/>
         </Frame>
-        <ScrollView Grid.Row="1" Padding="30">
-            <StackLayout Spacing="25" VerticalOptions="CenterAndExpand">
+        <ScrollView Padding="30">
+            <StackLayout Spacing="25">
 
                 <Button Text="START GAME"
                     Clicked="StartGameButton_Clicked"
@@ -52,8 +34,6 @@
                     CornerRadius="15"
                     HeightRequest="60"/>
 
-               
-
                 <Button Text="EXIT GAME"
                     BackgroundColor="#333C4A"
                     TextColor="White"
@@ -62,6 +42,5 @@
                     HeightRequest="60"/>
             </StackLayout>
         </ScrollView>
-    </Grid>
-
+    </VerticalStackLayout>
 </ContentPage>
