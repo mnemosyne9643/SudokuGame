@@ -2,6 +2,10 @@ namespace SudokuGame.Pages;
 
 public partial class StartGame : ContentPage
 {
+    GamePlay easy_game;
+    GamePlay medium_game;
+    GamePlay hard_game;
+
     private readonly string[] difficulties = { "EASY", "MEDIUM", "HARD" };
     private readonly string[] colors = { "#00FF66", "#FFD700", "#FF4444" };
     private readonly string[] images =
@@ -18,6 +22,8 @@ public partial class StartGame : ContentPage
     private void OnDifficultyChanged(object sender, ValueChangedEventArgs e)
     {
         int level = (int)Math.Round(e.NewValue);
+        DifficultySlider.Value = level;
+
         UpdateDifficulty(level);
     }
 
@@ -35,17 +41,26 @@ public partial class StartGame : ContentPage
         switch (selectedDifficulty)
         {
             case "EASY":
-                await Navigation.PushAsync(new GamePlay());
+                // generate one
+                if (easy_game is null) easy_game = new GamePlay();
+
+                await Navigation.PushAsync(easy_game);
+                easy_game.GenerateBoard(Random.Shared.Next(24, 27));
                 break;
             case "MEDIUM":
-                await Navigation.PushAsync(new GamePlay());
+                // generate one
+                if (medium_game is null) medium_game = new GamePlay();
+
+                await Navigation.PushAsync(medium_game);
+                medium_game.GenerateBoard(Random.Shared.Next(30, 36));
                 break;
             case "HARD":
-                await Navigation.PushAsync(new GamePlay());
+                // generate one
+                if (hard_game is null) hard_game = new GamePlay();
+
+                await Navigation.PushAsync(hard_game);
+                hard_game.GenerateBoard(Random.Shared.Next(42, 50));
                 break;
-
-
-
         }
     }
 }
