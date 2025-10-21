@@ -291,6 +291,7 @@ public partial class GamePlay : ContentPage
 
         HighlightRowCol(row, col);
 
+        // TODO FIX: dont turn the text into blue if it was previously wrong spot
         if (mat[row,col] != 0)
         { 
             currGrid.BackgroundColor = safeColorText;
@@ -362,7 +363,7 @@ public partial class GamePlay : ContentPage
         int row = Grid.GetRow(currGrid.Parent);
         int col = Grid.GetColumn(currGrid.Parent);
 
-        if (mat[row, col] == 0 && answerMat[row, col] != 0)
+        if (mat[row, col] == 0)
         {
             currGrid.Text = "";
             answerMat[row, col] = 0;

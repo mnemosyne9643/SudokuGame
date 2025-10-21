@@ -20,14 +20,15 @@
 
                 <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
                     <Label 
-                        x:Name="lbl_TotalWins"
                         Text="TOTAL WINS"
                         FontSize="12"
                         FontFamily="Poppins"
                         FontAttributes="Bold"
                         TextColor="#ffeb3b"
                         HorizontalOptions="Center" />
-                    <Label Text="0"
+                    <Label 
+                        x:Name="lbl_TotalWins"
+                        Text="0"
                         FontSize="22"
                         FontFamily="Poppins"
                         FontAttributes="Bold"
