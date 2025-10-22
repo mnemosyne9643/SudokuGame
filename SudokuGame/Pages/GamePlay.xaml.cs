@@ -30,7 +30,7 @@ public partial class GamePlay : ContentPage
     // Boards properties
     private Button[,] gridButtons = new Button[9, 9];
 
-    private int[,] answerMat = new int[9,9];
+    private int[,] answerMat = new int[9, 9];
     private int[,] mat;
 
     // Currents
@@ -291,11 +291,18 @@ public partial class GamePlay : ContentPage
 
         HighlightRowCol(row, col);
 
-        // TODO FIX: dont turn the text into blue if it was previously wrong spot
-        if (mat[row,col] != 0)
-        { 
-            currGrid.BackgroundColor = safeColorText;
-            currGrid.Background = safeColorText;
+        if (mat[row, col] == 0)
+        {
+            if (currGrid.TextColor == notSafe)
+            {
+                currGrid.BackgroundColor = notSafe;
+                currGrid.Background = notSafe;
+            }
+            else
+            {
+                currGrid.BackgroundColor = safeColorText;
+                currGrid.Background = safeColorText;
+            }
         }
         else
         {
